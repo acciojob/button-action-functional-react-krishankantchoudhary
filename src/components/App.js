@@ -1,17 +1,19 @@
 import React, {Component, useState} from "react";
 import "./../styles/App.css";
-import Dis from "./Dis";
 
 function App() {
-  const[display,setDisplay]=useState("");
+  const[display,setDisplay]=useState(false);
 
   const handleClick=()=>{
-    setDisplay(<Dis/>)
+    setDisplay(true);
   }
   return (
     <div id="main">
       <button id="click" onClick={handleClick}>Click</button>
-      <div>{display}</div>
+
+      {display &&(
+        <p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy.</p>
+      )}
     </div>
   );
 }
